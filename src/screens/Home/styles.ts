@@ -1,3 +1,4 @@
+import { Dialog } from "@radix-ui/themes";
 import styled from "styled-components";
 
 export const Container = styled.main`
@@ -59,3 +60,14 @@ export const ToDoList = styled.div`
     background-clip: content-box;
   }
 `;
+
+export const DialogTitle = styled(Dialog.Title)`
+  text-align: center;
+`
+
+export const InputTask = styled.input`
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  outline: none;
+`

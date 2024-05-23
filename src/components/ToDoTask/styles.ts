@@ -51,6 +51,7 @@ export const StatusTask = styled.div`
     height: 100%;
     width: 100%;
     padding-left: 1rem;
+    outline: none;
   }
 
   button {
