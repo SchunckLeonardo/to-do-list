@@ -1,3 +1,4 @@
+import { ToDoTask } from "../../components/ToDoTask";
 import { Container, ToDoButton, ToDoList } from "./styles";
 
 export function Home() {
@@ -7,7 +8,7 @@ export function Home() {
         To Do List<span className="square"></span>
       </ToDoButton>
       <ToDoList>
-        {/* <ToDoTask /> */}
+        {Array.from({length: 10}).map((_, i) => <ToDoTask key={i} />)}
       </ToDoList>
     </Container>
   )
