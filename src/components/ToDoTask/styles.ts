@@ -1,7 +1,21 @@
 import styled from "styled-components";
 
-export const BoxContainer = styled.section`
-  background-color: ${(p) => p.theme["yellow-100"]};
+interface BoxContainerProps {
+  priority: "normal" | "important" | "most"
+}
+
+export const BoxContainer = styled.section<BoxContainerProps>`
+  background-color: ${(p) => {
+    if(p.priority === 'normal') {
+      return p.theme["yellow-100"]
+    }
+    if(p.priority === 'important') {
+      return '#e6cc3e'
+    }
+    if(p.priority === 'most') {
+      return '#b5163b'
+    }
+  }};
   padding: 1rem;
   height: 9rem;
   border-radius: 10px;

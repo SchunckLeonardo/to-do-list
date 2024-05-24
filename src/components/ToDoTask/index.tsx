@@ -1,16 +1,24 @@
 import { Check, X } from "@phosphor-icons/react";
 import { BoxContainer, StatusTask } from "./styles";
+import { Task } from "../../context/TaskContext";
+import { useTask } from "../../hooks/useTask";
 
-export function ToDoTask() {
+interface ToDoTaskProps {
+  task: Task
+}
+
+export function ToDoTask({ task }: ToDoTaskProps) {
+  const { doneTask, removeTask } = useTask()
+
   return (
-    <BoxContainer>
-      <h3>Lavar louça</h3>
+    <BoxContainer priority={task.priority}>
+      <h3>{task.name}</h3>
       <StatusTask>
-        <input value="Concluído" type="text" readOnly />
-        <button>
+        <input value={task.status} type="text" readOnly />
+        <button onClick={() => doneTask(task)}>
           <Check />
         </button>
-        <button>
+        <button onClick={() => removeTask(task)}>
           <X />
         </button>
         <span></span>

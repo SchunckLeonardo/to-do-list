@@ -44,6 +44,7 @@ export const ToDoList = styled.div`
   gap: 1.5rem;
   overflow: hidden;
   overflow-y: scroll;
+  height: 100%;
 
   &::-webkit-scrollbar {
     width: 25px;
@@ -70,4 +71,17 @@ export const InputTask = styled.input`
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.7);
   outline: none;
+`
+
+export const FormTask = styled.form`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+`
+
+export const NoTasks = styled.p`
+  font-family: 'fs-gravity';
+  font-size: 2rem;
+  text-align: center;
 `
